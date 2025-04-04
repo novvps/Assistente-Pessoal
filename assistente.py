@@ -1,13 +1,24 @@
 import pyautogui as pyag
 from time import sleep
+import speech_recognition as sr
+# pip install SpeechRecognition
+# pip install PyAudio
 
+rec = sr.Recognizer()
 pyag.size()
 pyag.position()
 
-tarefa = int(input('O que você quer fazer?\n1 - VS Code\n2 - Discord\n3 - ChatGPT\n4 - GitHub\n5 - Whatsapp\nDigite aqui: '))
+# print(sr.Microphone().list_microphone_names())
+with sr.Microphone(0) as mic:
+    rec.adjust_for_ambient_noise(mic)
+    print("O que você quer fazer?\n1 - VS Code\n2 - Discord\n3 - ChatGPT\n4 - GitHub\n5 - Whatsapp\n")
+    audio = rec.listen(mic)
+    tarefa = rec.recognize_google(audio, language="pt-BR")
+    tarefa = tarefa.lower()
+    print(tarefa)
 
 match tarefa:
-    case 1:
+    case "vs code":
         pyag.hotkey('winleft', 'm')
         pyag.alert(text='Vou abrir o seu Visual Studio Code... Aguarde.', title='Divo Tech', button='Ok')
         pyag.PAUSE = 0.5
@@ -18,14 +29,14 @@ match tarefa:
         pyag.press('enter')
 
         sleep(1)
-    case 2:
+    case "discord":
         pyag.hotkey('winleft', 'm')
         pyag.alert(text='Vou abrir o seu Discord... Aguarde.', title='Divo Tech', button='Ok')
         pyag.PAUSE = 0.5
 
-        # abrir o brave
+        # abrir o chrome
         pyag.press('winleft')
-        pyag.write('brave')
+        pyag.write('chrome')
         pyag.press('enter')
 
         sleep(2)
@@ -36,14 +47,14 @@ match tarefa:
 
         sleep(1)
 
-    case 3:
+    case "chatgpt":
         pyag.hotkey('winleft', 'm')
         pyag.alert(text='Vou abrir o ChatGPT... Aguarde.', title='Divo Tech', button='Ok')
         pyag.PAUSE = 0.5
 
-        # abrir o brave
+        # abrir o chrome
         pyag.press('winleft')
-        pyag.write('brave')
+        pyag.write('chrome')
         pyag.press('enter')
 
         sleep(3)
@@ -54,14 +65,14 @@ match tarefa:
 
         sleep(1)
 
-    case 4:
+    case "github":
         pyag.hotkey('winleft', 'm')
         pyag.alert(text='Vou abrir o seu GitHub... Aguarde.', title='Divo Tech', button='Ok')
         pyag.PAUSE = 0.5
 
         # abrir o brave
         pyag.press('winleft')
-        pyag.write('brave')
+        pyag.write('chrome')
         pyag.press('enter')
 
         sleep(3)
@@ -71,14 +82,14 @@ match tarefa:
         pyag.press('enter')
 
         sleep(1)
-    case 5:
+    case "whatsapp":
         pyag.hotkey('winleft', 'm')
         pyag.alert(text='Vou abrir o seu Whatsapp... Aguarde.', title='Divo Tech', button='Ok')
         pyag.PAUSE = 0.5
 
         # abrir o brave
         pyag.press('winleft')
-        pyag.write('brave')
+        pyag.write('chrome')
         pyag.press('enter')
 
         sleep(3)
