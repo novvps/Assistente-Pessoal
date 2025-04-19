@@ -1,4 +1,4 @@
-<h1>RPA (AUTOMAÇÃO DE PROCESSOS ROBÓTICOS)</h1>
+<h1>RPA (AUTOMAÇÃO ROBÓTICA DE PROCESSOS)</h1>
 
 - ⚙️Criado com a finalidade de apresentar em um seminário (tema: IA e Automação) no meu curso técnico de Desenvolvimento de Sistemas no terceiro semestre;
 - 💻Linguagem utilizada: Python 3.11.9;
