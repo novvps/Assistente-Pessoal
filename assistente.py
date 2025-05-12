@@ -3,6 +3,7 @@ from time import sleep
 import speech_recognition as sr
 # pip install SpeechRecognition
 # pip install PyAudio
+# pip install pyautogui
 
 rec = sr.Recognizer()
 pyag.size()
